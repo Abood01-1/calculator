@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap');
+
+*,*::after,*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  background-color: #f4f4f4;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator{
+  display: grid;
+  padding: 3vmin;
+  grid-template-columns: repeat(4, 7rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem)
+}
+
+.output{
+  grid-column: 1 / -1;
+  background-color: #333;
+  padding: 3vmin;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  color: #f8f8f8;
+  /* font-weight: 100; */
+  flex-direction: column;
+}
+
+.output .previos{
+  font-size: 4vmin;
+  opacity: 0.8;
+}
+
+.output .current{
+  font-size: 6vmin;
+}
+
+.span-tow{
+  grid-column: span 2;
+}
+
+button{
+  border: 2px solid #f8f8f8;
+  outline: none;
+  font-weight: bold;
+  font-size: 4vmin;
+  transition: 0.3s;
+}
+
+button:hover{
+  background-color: #333;
+  color: #f8f8f8;
+}
+
+@media (max-width:494px) {
+  .calculator{
+    padding: 3vmin;
+    grid-template-columns: repeat(4, 5rem);
+    grid-template-rows: minmax(5rem, auto) repeat(5, 5rem)
+  }
+}
+
+@media (max-width:340px) {
+  .calculator{
+    padding: 3vmin;
+    grid-template-columns: repeat(4, 4rem);
+    grid-template-rows: minmax(4rem, auto) repeat(5, 5rem)
+  }
+
+  .output .current{
+    font-size: 7vmin;
+  }
+
+  .output .previos{
+    font-size: 5vmin;
+  }
+}
+
+@media (max-width:272px) {
+  .calculator{
+    padding: 3vmin;
+    grid-template-columns: repeat(4, 3rem);
+    grid-template-rows: minmax(3rem, auto) repeat(5, 4rem)
+  }
+}
